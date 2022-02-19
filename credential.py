@@ -42,3 +42,21 @@ class Credentials():
          A method that deletes a saved account from the list
          '''
          Credentials.credentials_list.remove(self) 
+
+    @classmethod
+
+    def find_credentials(cls, account):
+        '''
+        method that take account and retrieves password for the account
+        '''
+        for credential in cls.credentials_list:
+            if credential.account==account:
+                return credential
+    
+    @classmethod
+    def display_credentials(cls):
+        '''
+        A method that returns all the items in the credentials list
+        '''
+
+        return cls.credentials_list
