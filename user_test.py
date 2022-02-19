@@ -3,6 +3,10 @@
 import unittest
 # importing unitest module
 
+
+from credential import  Credentials
+# importing credentials class
+
 from user import User
 # importing user class
 

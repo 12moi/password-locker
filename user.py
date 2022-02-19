@@ -1,11 +1,14 @@
 
-from collections import UserList
+from credential import Credentials
 
+from collections import UserList
 
 class User:
     '''
     class that generates a new user instance
     '''
+
+    # Empty user list array
     user_list=[]
     def __init__(self, user_name, password):
         self.user_name=user_name
