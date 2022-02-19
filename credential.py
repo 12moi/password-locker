@@ -2,6 +2,8 @@
 
 from typing_extensions import Self
 
+from run import delete_account
+
 
 class Credentials():
     '''
@@ -23,13 +25,42 @@ class Credentials():
                 a_user=username
         return a_user
     
-    def __init__(self,account,username, password):
+    def __init__(self,accountname,accountusername, accountpassword):
            '''
            a method that defines the user credentials to saved
            '''
-           self.account=account
-           self.username=username
-           self.password=password
+           self.accountname=accountname
+           self.accountusername=accountusername
+           self.accountpassword=accountpassword
+
+    def save_account(self):
+        '''
+        this is a method that saves Accounts information
+        '''
+        Credentials.acounts.append(self)
+
+        delete_account(self)
+        '''
+        Deletes saved account credentials
+        '''
+        Credentials.acounts.remove(self)
+
+    @classmethod
+    def display_accounts(cls):
+        '''
+        this method returns the accounts list
+        '''
+        for acount in cls.acounts:
+            return cls.acounts
+
+    @classmethod
+    def find_by_number(cls,number):
+        '''
+        This method takes in a number and finds a contact that matches the number
+        '''
+        for account in cls.acounts:
+            if account.accountusername==number:
+                return account
 
     def save_credentials(self):
         '''

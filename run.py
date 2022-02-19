@@ -79,7 +79,7 @@ def main():
                        print("\n")
                        print("Enter your password...")
                        accountpassword=input()
-                       save_account(create_account(accountname,accountusername,accountpassword))
+                       save_account(create_account(accountName,username,accountpassword))
 
                    elif choose=="VC":
                        if find_account(accountName):
