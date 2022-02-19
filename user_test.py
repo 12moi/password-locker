@@ -17,3 +17,11 @@ class TestUser(unittest.TestCase):
     Args:
         unittest.TestCase: TestCase class that helps in creating test cases
     """
+    
+    
+    def setUp(self):
+        '''
+        A method that runs before test method runs
+        '''
+        self.new_user=User()
+
