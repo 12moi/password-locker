@@ -10,7 +10,7 @@ class Credentials():
     
     '''
 
-    credentials_list = []
+    acounts = []
 
     @classmethod
     def verify_user(cls, username,password):
