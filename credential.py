@@ -1,8 +1,9 @@
 
 
-from typing_extensions import Self
 
-from run import delete_account
+
+
+from user import User
 
 
 class Credentials():
@@ -39,7 +40,7 @@ class Credentials():
         '''
         Credentials.acounts.append(self)
 
-        delete_account(self)
+    def   delete_account(self):
         '''
         Deletes saved account credentials
         '''

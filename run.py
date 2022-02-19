@@ -1,15 +1,15 @@
 
 import string
 
-from click import option
+
 
 from user import User
 
-from credential import Credentials
+from user import Credentials
 
-def create_user(self,username,password):
+def create_user(self,firstname,lastname,username,userpassword):
 
-    new_user=User(self, username,password)
+    new_user=User(self,firstname,lastname, username,userpassword)
     return new_user
 
 
@@ -51,10 +51,10 @@ def main():
                print("Enter your username...")
                print("Set your password...")
                userpassword=input()
-               save_user(create_user(username,userpassword))
+               save_user(create_user(firstname,lastname,username,userpassword))
                print("Your userpassword was created successful. Below are your details:")
                print("-"*10)
-               print(u"Name:{username}\nUsername:{usernamepassword}\nPassword")
+               print(f"Name:{firstname} {lastname}\nUsername:{username}\nPassword:{userpassword}")
                print("\n \n")
            elif option=="LG":
                print("Your username...")
