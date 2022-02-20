@@ -39,6 +39,13 @@ def display_accounts():
 def delete_account(user):
     user.delete_account()
 
+def copy_credential():
+	'''
+	Function to copy a credentials details to the clipboard
+	'''
+	return Credentials.copy_credential()
+
+
 def main():
        while True:
            print("Welcome to Password locker type SU or LG to get started")
