@@ -51,10 +51,14 @@ def main():
                print("Enter your username...")
                print("Set your password...")
                userpassword=input()
-               save_user(create_user(firstname,lastname,username,userpassword))
+               save_user(create_user(username,userpassword))
                print("Your userpassword was created successful. Below are your details:")
                print("-"*10)
-               print(f"Name:{firstname} {lastname}\nUsername:{username}\nPassword:{userpassword}")
+               print(f"Name:\nUsername:{username}\nPassword:{userpassword}")
+
+            #   firstname,lastname,
+            #    {firstname} {lastname}
+
                print("\n \n")
            elif option=="LG":
                print("Your username...")
