@@ -2,6 +2,7 @@
 import string
 
 
+import pyperclip
 
 from user import User
 
