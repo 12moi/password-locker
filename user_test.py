@@ -23,8 +23,25 @@ class TestUser(unittest.TestCase):
         '''
         A method that runs before test method runs
         '''
-        self.new_user=User()
+        self.new_user=User('moi', 'shadrack', 'shadrack12')
+    
+    def test_init(self):
+        '''
+        This test checks if the object has been initialized correctly
+        '''
+       
+        self.assertEqual(self.new_user.username,'mosha')
+        self.assertEqual(self.new_user.password, 'mosha12')
 
+
+    def test_save_user(self):
+        '''
+       A  test case to test if a new user instance has been saved into the User list
+        '''    
+        self.new_user.save_user()
+        self.assertEqual(len(User.user_list),1)
+
+    
 
 
 class TestUser(unittest.TestCase):
@@ -44,9 +61,9 @@ class TestUser(unittest.TestCase):
         '''
         A test case to check if the credentials  has been initialized correctly
         '''
-        self.assertEqual(self.new_credential.account, '')
-        self.assertEqual(self.new_credential.username, '')
-        self.assertEqual(self.new_credential.password, '')
+        self.assertEqual(self.new_credential.account, 'facebook')
+        self.assertEqual(self.new_credential.username, 'mosha')
+        self.assertEqual(self.new_credential.password, 'mosha12')
     
     def save_credential_test(self):
         '''
@@ -54,3 +71,52 @@ class TestUser(unittest.TestCase):
         '''
         self.new_credential.save_credentials()
         self.assertEqual(len(Credentials.credentials_list),1)
+
+    def tearDown(self):
+        '''
+        This is method that does clean up after each test case has run.
+        '''
+        Credentials.credentials_list = []
+
+    def test_save_many_accounts(self):
+        '''
+        test to check if we can save multiple credentials objects to our credentials list
+        '''
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","mosha21","21mosha") 
+        test_credential.save_details()
+        self.assertEqual(len(Credentials.credentials_list),2)
+
+    def test_delete_credential(self):
+        """
+        test method is a method that test if we can remove an account credentials from our credentials_list
+        """
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","mosha21","21mosha")
+        test_credential.save_details()
+
+        self.new_credential.delete_credentials()
+        self.assertEqual(len(Credentials.credentials_list),1)
+
+    def test_find_credentialr(self):
+        """
+        test to check if we can find a credential entry by account name and display the details of the credential
+        """
+        self.new_credential.save_details()
+        test_credential = Credentials("Twitter","mosha21","21mosha") 
+        test_credential.save_details()
+
+        the_credential = Credentials.find_credential("Twitter")
+
+        self.assertEqual(the_credential.account,test_credential.account)
+
+    def test_display_all_saved_credentials(self):
+        '''
+        method that displays all the credentials that has been saved by the user
+        '''
+
+        self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
+
+if_name_="_main_"
+unittest.main()
+        
