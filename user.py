@@ -1,6 +1,6 @@
 
 
-# from credential import Credentials
+
 
 from collections import UserList
 
@@ -82,12 +82,12 @@ class Credentials():
             return cls.acounts
 
     @classmethod
-    def find_by_number(cls,number):
+    def find_by_username(cls,username):
         '''
         This method takes in a number and finds a contact that matches the number
         '''
         for account in cls.acounts:
-            if account.accountusername==number:
+            if account.accountusername==username:
                 return account
 
     def save_credentials(self):
