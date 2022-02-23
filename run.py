@@ -49,7 +49,6 @@ def copy_credential():
 def main():
        while True:
            print("Welcome to Password locker type SU or LG to get started")
-           print("SU -or- LG")
            option=input()
            if option=="SU":
                print("Create Account")
@@ -63,9 +62,6 @@ def main():
                print("Your userpassword was created successful. Below are your details:")
                print("-"*10)
                print(f"Name:\nUsername:{username}\nPassword:{userpassword}")
-
-            #   firstname,lastname,
-            #    {firstname} {lastname}
 
                print("\n \n")
            elif option=="LG":
