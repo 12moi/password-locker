@@ -30,14 +30,7 @@ code . or atom . based on the text editor you have.
 ### Behaviour Driven Development
 
 
-<!-- |Behaviour                                      |Input                                       |Output|
-------------------------------------------------------------------------------------------------------
-|Open the application on the terminal  |  Run the command <br>$ ./interface.py               | Welcome to Password locker type SU or LG to get started|
--------------------------------------------------------------------------------------------------------
-| Select SU                            |input username and password	                         |      |
-----------------------------------------------------------------------------------------------
-|  Select LG                           |Enter your password and username you signed up with            |    Abbreviations menu to help you navigate through the application  |
------------------------------------- -->
+
 
 ### Technologies Used
 Python 3.8

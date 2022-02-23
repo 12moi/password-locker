@@ -25,7 +25,7 @@ def find_user(username):
 def display_users():
     return User.diplay_users()
 
-def create_account(accountusername,accountname,accountpassword):
+def create_account(accountusername,accountName,accountpassword):
     newaccount=Credentials(accountusername,accountpassword)
 
 def save_account(user):

@@ -32,6 +32,15 @@ class User:
          '''
          UserList.user_list.remove(self)
 
+    def verify_user(cls, username,password):
+        '''
+        A method that very the user if the user exist in the user_list
+        '''
+        a_user=""
+        for user in user.user_list:
+            if(username==username and password==password):
+                a_user=username
+        return a_user
 
 class Credentials():
     '''
@@ -43,15 +52,7 @@ class Credentials():
     acounts = []
 
     @classmethod
-    def verify_user(cls, username,password):
-        '''
-        A method that very the user if the user exist in the user_list
-        '''
-        a_user=""
-        for user in user.user_list:
-            if(username==username and password==password):
-                a_user=username
-        return a_user
+    
     
     def __init__(self,accountname,accountusername, accountpassword):
            '''
